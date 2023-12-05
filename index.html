@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV generator</title>
+    <!-- <style></style> -->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="cv-form">
+      <h1 class="text-center my-1">Resume Generator</h1>
+
+      <div class="row">
+        <div class="col-md-6 mt-2">
+          <h3>Personal Info</h3>
+
+          <div class="form-group mt-3">
+            <label for="nameFeild">Full Name</label>
+            <input
+              type="text"
+              id="nameFeild"
+              placeholder="Enter here"
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group mt-3">
+            <label for="contact">Contact no.</label>
+            <input
+              type="number"
+              id="contact"
+              placeholder="Enter here"
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group mt-3">
+            <label for="emailAdress">Email Id</label>
+            <input
+              type="text"
+              id="email"
+              placeholder="Enter here"
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group mt-3">
+            <label for="Adress">Permanent Address</label>
+            <textarea
+              type="text"
+              id="adress"
+              placeholder="Enter Full Adress"
+              class="form-control"
+            ></textarea>
+          </div>
+          <p class="text-secondary my-3">Important Links</p>
+
+          <div class="form-group">
+            <label for="linkedin">LinkedIn</label>
+            <input
+              type="text"
+              id="linkedin"
+              placeholder="Enter here"
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group mt-3">
+            <label for="socialMedia">Social media</label>
+            <input
+              type="text"
+              id="social"
+              placeholder="Enter here"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group pt-3">
+        <label for="">select your photo</label>
+        <input id="image" type="file" class="form-control">
+        
+      </div>
+        </div>
+        <div class="col-md-6 mt-2">
+          <h3>Profesional Detail</h3>
+          <div class="form-group mt-3" id="abt">
+            <label for="achievemets">About Yourself</label>
+
+            <textarea
+              type="text"
+              id="about"
+              placeholder="Tell something about yourself"
+              class="form-control abtFeild"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <div class="form-group mt-3" id="ach">
+            <label for="achievemets">Acievements</label>
+
+            <textarea
+              type="text"
+              id="achievemets"
+              placeholder="enter your achievemets"
+              class="form-control achFeild"
+              rows="4"
+            ></textarea>
+
+            <div class="container text-center mt-3" id="achButton">
+              <button
+                onclick="addNewAch()"
+                class="btn btn-primary btn-sm achButton"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group mt-3" id="we">
+            <label for="experience">Work Experience</label>
+            <textarea
+              type="text"
+              id="experience"
+              placeholder="Enter your breif experience"
+              class="form-control weField"
+              rows="4"
+            ></textarea>
+            <div class="container text-center mt-3" id="weButton">
+              <button
+                onclick="addNewWe()"
+                class="btn btn-primary btn-sm weButton"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group mt-3" id="ac">
+            <label for="experience">Academic Details</label>
+            <textarea
+              type="text"
+              id="academicDetails"
+              placeholder="Enter your Academic Details"
+              class="form-control acFeild"
+              rows="4"
+            ></textarea>
+            <div class="container text-center mt-3" id="acButton">
+              <button
+                onclick="addNewAc()"
+                class="btn btn-primary btn-sm acButton"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="container text-center mt-4">
+        <button onclick="generateCV()" class="btn btn-primary btn-lg">
+          Generate CV
+        </button>
+      </div>
+    </div>
+
+    <div class="container" id="cv-template">
+      <div class="row">
+        <div class="col-md-4 text-left py-2 left">
+          <!-- 1st coloumn -->
+          <div class="container text-center">
+            <img id="imageT"
+              src="https://static.vecteezy.com/system/resources/previews/020/765/399/non_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg"
+              alt=""
+              class="img-fluid profileImg"
+            />
+          </div>
+          <div class="container text-center">
+            <div class="container pt-2">
+              <p id="NameT2">Tanuj Kashyap</p>
+              <p id="contactT">7489790337</p>
+              <p id="emailT">tanujkashyap@gmail.com</p>
+              <p id="adressT">17, phae dgujgg</p>
+              <hr />
+            </div>
+          </div>
+
+          <h4 class="text-center">Social Media</h4>
+          <div class="container text-left pt-3">
+            <p id="linkedinT">linkedin.com/tanuj</p>
+            <p id="socialT">facebook.com/tanuj</p>
+          </div>
+        </div>
+
+        <div class="col-md-8 py-5">
+          <!-- 2nd column -->
+          <h1 id="NameT1" class="text-center" styl="font-weight:980">
+            Tanuj Kashyap
+          </h1>
+          <!-- about -->
+          <div class="card">
+            <div class="card-header">
+              <h3>About</h3>
+              <hr />
+              <p id="aboutT">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde
+                praesentium quisquam veniam iste aspernatur quis dolores
+                delectus id soluta laudantium similique laborum dolorem dolore,
+                ratione maiores excepturi, voluptatem maxime ut.
+              </p>
+            </div>
+          </div>
+
+          <!-- <experience -->
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Work Experience</h3>
+            </div>
+            <div class="card-body">
+              <ul id="weT">
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex,
+                  voluptates! Ea fuga a rerum maxime nostrum, blanditiis
+                  doloribus repellendus necessitatibus libero saepe hic quos, at
+                  quasi consectetur porro! Impedit, molestiae.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex,
+                  voluptates! Ea fuga a rerum maxime nostrum, blanditiis
+                  doloribus repellendus necessitatibus libero saepe hic quos, at
+                  quasi consectetur porro! Impedit, molestiae.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex,
+                  voluptates! Ea fuga a rerum maxime nostrum, blanditiis
+                  doloribus repellendus necessitatibus libero saepe hic quos, at
+                  quasi consectetur porro! Impedit, molestiae.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- academeic -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Academic Qualifications</h3>
+            </div>
+            <div class="card-body">
+              <ul id="acT">
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex,
+                  voluptates! Ea fuga a rerum maxime nostrum, blanditiis
+                  doloribus repellendus necessitatibus libero saepe hic quos, at
+                  quasi consectetur porro! Impedit, molestiae.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex,
+                  voluptates! Ea fuga a rerum maxime nostrum, blanditiis
+                  doloribus repellendus necessitatibus libero saepe hic quos, at
+                  quasi consectetur porro! Impedit, molestiae.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex,
+                  voluptates! Ea fuga a rerum maxime nostrum, blanditiis
+                  doloribus repellendus necessitatibus libero saepe hic quos, at
+                  quasi consectetur porro! Impedit, molestiae.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- acchievemt -->
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Acchievemt</h3>
+            </div>
+            <div class="card-body">
+              <ul id="achT">
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex,
+                  voluptates! Ea fuga a rerum maxime nostrum, blanditiis
+                  doloribus repellendus necessitatibus libero saepe hic quos, at
+                  quasi consectetur porro! Impedit, molestiae.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex,
+                  voluptates! Ea fuga a rerum maxime nostrum, blanditiis
+                  doloribus repellendus necessitatibus libero saepe hic quos, at
+                  quasi consectetur porro! Impedit, molestiae.
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex,
+                  voluptates! Ea fuga a rerum maxime nostrum, blanditiis
+                  doloribus repellendus necessitatibus libero saepe hic quos, at
+                  quasi consectetur porro! Impedit, molestiae.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="container mt-3 text-center">
+            <button onclick="printCV()" class="btn background">print</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

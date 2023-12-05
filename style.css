@@ -1,0 +1,20 @@
+/* body {
+    background-color: aquamarine;
+} */
+#cv-form{
+   
+}
+#cv-template{
+    display: none;
+}
+.profileImg{
+    border: 1px solid black;
+    width: 200px;
+    border-radius: 200px;
+}
+
+
+.left{
+    color: beige;
+background-color: black;
+}
