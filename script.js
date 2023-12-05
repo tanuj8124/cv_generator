@@ -77,12 +77,12 @@ for(let e of wef){
 document.getElementById("acT").innerHTML= stt;
 
 //image
-let file=document.getElementById('image').files[0];
-let read=new FileReader();
-read.readAsDataURL(file);
-read.onloadend = function(){
-    document.getElementById("imageT").src= read.result;
-}
+// let file=document.getElementById('image').files[0];
+// let read=new FileReader();
+// read.readAsDataURL(file);
+// read.onloadend = function(){
+//     document.getElementById("imageT").src= read.result;
+// }
 
 document.getElementById('cv-form').style.display='none';
 document.getElementById('cv-template').style.display="block";
